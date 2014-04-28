@@ -113,8 +113,19 @@ class Datagrid implements DatagridInterface
             return;
         }
 
+        foreach ($this->getFilters() as $name => $filter) {
+            list($type, $options) = $filter->getRenderSettings();
+
+            $this->formBuilder->add($filter->getFormName(), $type, $options);
+        }
+
+        $this->formBuilder->add('_sort_by', 'hidden');
+        $this->formBuilder->add('_sort_order', 'hidden');
+        $this->formBuilder->add('_page', 'hidden');
+        $this->formBuilder->add('_per_page', 'hidden');
+
         $this->form = $this->formBuilder->getForm();
-        $this->form->bind($this->values);
+        $this->form->submit($this->values);
 
         $data = $this->form->getData();
 
