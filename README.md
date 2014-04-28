@@ -3,9 +3,9 @@ SonataDatagridBundle
 
 [![Build Status](https://secure.travis-ci.org/sonata-project/SonataDatagridBundle.png?branch=master)](http://travis-ci.org/sonata-project/SonataDatagridBundle)
 
-This bundle integrates the SonataAdminBundle with the Doctrine ORM project.
+This bundle provides base class to generate Datagrid.
 
-The online documentation of the bundle is in http://sonata-project.org/bundles/doctrine-orm-admin
+The online documentation of the bundle is in http://sonata-project.org/bundles/datagrid
 
 For contribution to the documentation you cand find it on [Resources/doc](https://github.com/sonata-project/SonataDatagridBundle/tree/master/Resources/doc).
 
