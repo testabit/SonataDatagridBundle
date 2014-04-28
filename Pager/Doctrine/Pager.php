@@ -30,7 +30,7 @@ class Pager extends BasePager
      */
     public function computeNbResult()
     {
-        $countQuery = clone $this->getQuery()->getQuery();
+        $countQuery = clone $this->getQuery();
 
         if (count($this->getParameters()) > 0) {
             $countQuery->setParameters($this->getParameters());
@@ -46,7 +46,7 @@ class Pager extends BasePager
      */
     public function getResults($hydrationMode = Query::HYDRATE_OBJECT)
     {
-        return $this->getQuery()->execute(array(), $hydrationMode);
+        return $this->getQuery()->getQuery()->execute(array(), $hydrationMode);
     }
 
     /**
