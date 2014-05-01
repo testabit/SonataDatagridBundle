@@ -23,7 +23,7 @@ Now, add the bundle to the kernel:
     {
         return array(
             // Vendor specifics bundles
-            new Sonata\DatagridBundle\SonataDatagrideBundle(),
+            new Sonata\DatagridBundle\SonataDatagridBundle(),
         );
     }
 
