@@ -11,6 +11,7 @@
 
 namespace Sonata\DatagridBundle\ProxyQuery\Doctrine;
 
+use Doctrine\ORM\Query;
 use Sonata\DatagridBundle\ProxyQuery\BaseProxyQuery;
 use Sonata\DatagridBundle\ProxyQuery\ProxyQueryInterface;
 
@@ -41,33 +42,6 @@ class ProxyQuery extends BaseProxyQuery implements ProxyQueryInterface
         $query->setFirstResult($this->getFirstResult());
         $query->setMaxResults($this->getMaxResults());
 
-        $this->results = array(
-            'results' => $query->getQuery()->execute(),
-            'facets'  => $this->getFacets()
-        );
-
-        return $this->results['results'];
-    }
-
-    /**
-     * Returns correctly formatted facets result array
-     *
-     * @return array
-     */
-    protected function getFacets()
-    {
-        $facetsQuery = $this->getQueryBuilder()->getFacetsQuery();
-        $facets = $facetsQuery->getQuery()->execute();
-
-        return array(
-            'categories' => array(
-                'terms' => array_map(function($facet) {
-                    return array(
-                        'term'  => $facet['term'],
-                        'count' => (int) $facet['products_nb']
-                    );
-                }, $facets)
-            )
-        );
+        return $query->execute();
     }
 }

@@ -10,6 +10,8 @@
 
 namespace Sonata\DatagridBundle\Pager;
 
+use Sonata\DatagridBundle\ProxyQuery\ProxyQueryInterface;
+
 /**
  * Pager class.
  *
