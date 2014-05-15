@@ -11,13 +11,15 @@
 
 namespace Sonata\DatagridBundle\ProxyQuery;
 
+use Doctrine\ORM\QueryBuilder;
+
 /**
  * This class try to unify the query usage between different models
  */
 class BaseProxyQuery
 {
     /**
-     * @var mixed
+     * @var QueryBuilder
      */
     protected $queryBuilder;
 
@@ -49,9 +51,9 @@ class BaseProxyQuery
     /**
      * Constructor
      *
-     * @param mixed $queryBuilder A query object
+     * @param QueryBuilder $queryBuilder A query builder object
      */
-    public function __construct($queryBuilder)
+    public function __construct(QueryBuilder $queryBuilder)
     {
         $this->queryBuilder = $queryBuilder;
     }

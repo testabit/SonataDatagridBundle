@@ -46,15 +46,7 @@ class Pager extends BasePager
      */
     public function getResults($hydrationMode = Query::HYDRATE_OBJECT)
     {
-        return $this->getQuery()->getQuery()->execute(array(), $hydrationMode);
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function getQuery()
-    {
-        return $this->query;
+        return $this->getQuery()->execute(array(), $hydrationMode);
     }
 
     /**
