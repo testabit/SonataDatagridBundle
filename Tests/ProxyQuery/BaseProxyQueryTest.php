@@ -21,6 +21,10 @@ class BaseProxyQueryTest extends \PHPUnit_Framework_TestCase
      */
     public function testFallbackOnQuerybuilder()
     {
+        if (!class_exists('Doctrine\ORM\Query')) {
+            $this->markTestSkipped("Doctrine ORM doesn't seem to be installed");
+        }
+
         $queryBuilder = $this->getMockBuilder('Doctrine\ORM\QueryBuilder')
             ->disableOriginalConstructor()
             ->getMock();
