@@ -19,7 +19,7 @@ use Elastica\Search;
 /**
  * This class try to unify the query usage with Doctrine
  */
-class ProxyQuery extends BaseProxyQuery implements ProxyQueryInterface
+class ProxyQuery extends BaseProxyQuery
 {
     /**
      * {@inheritdoc}

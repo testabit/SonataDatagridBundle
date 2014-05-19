@@ -16,7 +16,7 @@ use Doctrine\ORM\QueryBuilder;
 /**
  * This class try to unify the query usage between different models
  */
-class BaseProxyQuery
+abstract class BaseProxyQuery implements ProxyQueryInterface
 {
     /**
      * @var QueryBuilder
