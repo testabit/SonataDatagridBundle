@@ -1,5 +1,5 @@
 {
-    "name": "sonata-project/datagrid-bundle",
+    "name": "testabit/datagrid-bundle",
     "type": "symfony-bundle",
     "description": "Symfony SonataDatagridBundle",
     "keywords": ["datagrid", "sonata"],
